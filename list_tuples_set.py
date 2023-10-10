@@ -129,22 +129,30 @@ print(max(t))
 print(sum(t))
 
 # while loop conditional statemnet\
-def reverseNum(num):
-    ans = 0
+def reverse_number(num):
+    # Initialize a variable to store the reversed number
+    reversed_num = 0
+    
     while num > 0:
-        rem = num%10
-        ans = 10*ans + rem
-        num /=10
-    else:
-        return ans
+        # Extract the last digit of the number using the modulo operator
+        last_digit = num % 10
+        
+        # Append the last digit to the reversed number
+        reversed_num = (reversed_num * 10) + last_digit
+        
+        # Remove the last digit from the original number
+        num = num // 10
+    
+    return reversed_num
 
-def main(a):
-    a = int(input())
-    print("before reversing a number")
-    print(a)
-    reversenumber = reverseNum(a)
-    print("after reversing a number")
-    print(reversenumber)
+# Input a number from the user
+num = int(input("Enter a number: "))
+
+# Call the reverse_number function to get the reversed number
+reversed_result = reverse_number(num)
+
+# Display the reversed number
+print("Reversed number:", reversed_result)
     
 
 
